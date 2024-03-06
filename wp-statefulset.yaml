@@ -41,7 +41,7 @@ spec:
         - containerPort: 3306
           name: db
         imagePullPolicy: Always
-  volumes:
-  - name: hostpath-vol
-    persistentVolumeClaim:
-      claimName: pvc-hostpath
+      volumes:
+      - name: hostpath-vol
+        persistentVolumeClaim:
+          claimName: pvc-hostpath
