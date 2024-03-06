@@ -36,10 +36,10 @@ spec:
         volumeMounts:
         - name: wordpress-nfs
           mountPath: /var/www/html
-        volumes:
-        - name: wordpress-nfs
-          persistentVolumeClaim:
-            claimName: pvc-nfs
+  volumes:
+  - name: wordpress-nfs
+    persistentVolumeClaim:
+      claimName: pvc-nfs
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
