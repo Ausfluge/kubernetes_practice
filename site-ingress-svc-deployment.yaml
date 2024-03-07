@@ -82,10 +82,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  type: ClusterIP
   name: site02
   namespace: site
 spec:
+  type: ClusterIP
   selector:
     app: site02
   ports:
