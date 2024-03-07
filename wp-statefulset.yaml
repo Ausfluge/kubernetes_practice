@@ -31,9 +31,14 @@ spec:
         app: mysql-statefulset-app
     spec:
       terminationGracePeriodSeconds: 10
+      nodeSelector: # 빠트린 부분
+        kubernetes.io/hostname: worker2 ## 빠트린 부분
       containers:
       - name: mysql-statefulset-app
         image: mysql:8.0
+        envFrom: # 빠트린 부분, configmap에 설정한 변수 정의한 부분 추가
+        - configMapRef: # 빠트린 부분
+            name: configmap-mysql # 빠트린 부분
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: hostpath-vol

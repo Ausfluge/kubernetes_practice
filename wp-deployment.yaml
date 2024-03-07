@@ -31,6 +31,14 @@ spec:
       containers:
       - name: wordpress
         image: wordpress:6.4
+        envFrom: # 빠트린 부분, configmap에 설정한 변수 정의한 부분 추가
+        - configMapRef: # 빠트린 부분
+            name: configmap-wp # 빠트린 부분
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 500m
         ports:
         - containerPort: 80
         volumeMounts:
