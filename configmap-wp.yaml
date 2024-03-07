@@ -4,7 +4,7 @@ metadata:
   name: configmap-wp
   namespace: wordpress
 data:
-  WORDPRESS_DB_HOST: mysql:3306 #mysql 서비스이름
+  WORDPRESS_DB_HOST: mysql-statefulset-service:3306 #mysql 서비스이름
   WORDPRESS_DB_NAME: wpdb
   WORDPRESS_DB_USER: wpuser
   WORDPRESS_DB_PASSWORD: wppassword
